@@ -14,7 +14,7 @@ addBtn.addEventListener("click", () => {
 
   // Inserting the Text and Button
   li.innerHTML = `
-    <span class="taskText">${task}</span>
+    <a class="taskText">${task}</a>
     <span>
       <button class="editBtn">Edit</button>
       <button class="deleteBtn">Delete</button>
@@ -28,7 +28,7 @@ addBtn.addEventListener("click", () => {
   // Function Added to Delete the Task
   const deleteBtn = li.querySelector(".deleteBtn");
   deleteBtn.addEventListener("click", () => {
-      li.remove();
+    li.remove();
   });
 
   // Function Added to Edit the Task
@@ -40,4 +40,20 @@ addBtn.addEventListener("click", () => {
       taskSpan.textContent = newTask;
     }
   });
+
+
+  // Mark as Done Feature Added
+  let taskDone = li.querySelector(".taskText");
+  taskDone.addEventListener("click", () => {
+    const isCompleted = taskDone.dataset.completed === "true";
+    taskDone.style.textDecoration = isCompleted ? "" : "line-through";
+    taskDone.style.backgroundColor = isCompleted ? "" : "green";
+    taskDone.style.color = isCompleted ? "" : "white";
+    taskDone.style.padding = isCompleted ? "" : "0px 12px";
+
+    taskDone.dataset.completed = !isCompleted;
+  });
 });
+
+
+
