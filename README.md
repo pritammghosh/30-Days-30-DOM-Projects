@@ -22,7 +22,8 @@ A **30-day coding challenge** to build 30 creative DOM-based projects using vani
 ## 📋 Project List
 | Day | Project | Key Concepts |
 |-----|---------|--------------|
-| 1   | [To-Do App](#) | DOM Events, Local Storage |
+| 1   | [To-Do App](#) | DOM Events |
+| 2   | [Weather App](#) | DOM Events, Api Fetching |
 More to come......
 
 ---
