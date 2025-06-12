@@ -1,49 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 
 <body>
-    <div id="main">
-        <div class="bar">
-            <input type="text">
-            <search><i class="ri-search-2-line"></i></search>
-        </div>
-        <section class="wd">
-            <div class="top">
-                <h1>Tezpur<span>- Weather Forcast</span></h1>
-                <div class="headContent">
-                    <p>11 Tuesday - May - 2025</p>
-                    <a href="#">Assam, India</a>
-                </div>
-            </div>
-            <div class="middle">
-                <div class="div1">
-                    <img src="assets/assets_task_01jxfw8f0jerdrske1asd12h49_1749658412_img_3.webp" alt="">
-                    <h1>32&deg;C</h1>
-                    <h2>Mostly Sunny </h2>
-                </div>
-                <div class="div2">
-                    <div class="div1"> </div>
-                    <div class="div2"> </div>
-                    <div class="div3"> </div>
-                    <div class="div4"> </div>
-                </div>
-                <div class="div3">3</div>
-                <div class="div4">4</div>
-                <div class="div5">5</div>
-                <div class="div6">6</div>
-                <div class="div7">7</div>
-            </div>
-        </section>
+  <div id="main">
+    <div class="bar">
+      <input type="text" id="cityInput" placeholder="Enter Your City Name" />
+      <search><i class="ri-search-2-line"></i></search>
     </div>
-    <script src="app.js"></script>
-</body>
 
+    <section class="wd" id="weatherData" style="display: none;">
+      <div class="top">
+         <h1 id="cityName">City Name <span>- Weather Forecast</span></h1>
+         <div class="headContent">
+            <p id="dateText"></p>
+            <a href="#" id="locationText"></a>
+        </div>
+      </div>
+
+      <div class="middle">
+        <div class="div1">
+          <img src="assets/assets_task_01jxfw8f0jerdrske1asd12h49_1749658412_img_3.webp" alt="" />
+          <h1 id="temp">32&deg;C</h1>
+          <h2 id="weatherCondition">Mostly Sunny</h2>
+        </div>
+
+        <div class="div2">
+          <div class="innerdiv1">
+            <h2><i class="ri-leaf-fill"></i>AQI</h2>
+            <a href="#" id="aqi">51</a>
+          </div>
+          <div class="innerdiv2">
+            <h2><i class="ri-rainy-fill"></i>Chances of Rain...</h2>
+            <a href="#" id="rainChance">51 <span>%</span></a>
+          </div>
+          <div class="innerdiv3">
+            <h2>Sunrise <i class="ri-arrow-up-line"></i></h2>
+            <img src="assets/PNG/sunrise.png" alt="" />
+            <span id="sunrise">5.57 AM</span>
+          </div>
+          <div class="innerdiv4">
+            <h2>Sunset <i class="ri-arrow-down-line"></i></h2>
+            <img src="assets/PNG/Sunset.png" alt="" />
+            <span id="sunset">6.57 PM</span>
+          </div>
+        </div>
+
+        <div class="div3">
+          <div class="topContent">
+            <img src="assets/PNG/humidity_8923419.png" alt="" />
+            <h2>Humidity</h2>
+          </div>
+          <div class="buttomContent">
+            <h2 id="humidity">60%</h2>
+          </div>
+        </div>
+
+        <div class="div4">
+          <div class="topContent">
+            <img src="assets/PNG/arrows_12758036.png" alt="" />
+            <h2>Air Pressure</h2>
+          </div>
+          <div class="buttomContent">
+            <h2 id="pressure">1001<span>mbar</span></h2>
+          </div>
+        </div>
+
+        <div class="div5">
+          <div class="topContent">
+            <img src="assets/PNG/air-quality_12015825.png" alt="" />
+            <h2>Wind Speed</h2>
+          </div>
+          <div class="buttomContent">
+            <h2 id="wind">10.2 <span>km/hr</span></h2>
+          </div>
+        </div>
+
+        <div class="div6">
+          <div class="topContent">
+            <img src="assets/PNG/eye_13101970.png" alt="" />
+            <h2>Visibility Level</h2>
+          </div>
+          <div class="buttomContent">
+            <h2 id="visibility">Clear</h2>
+          </div>
+        </div>
+
+        <div class="div7">
+          <div class="topContent">
+            <img src="assets/PNG/uv-protection_5376317.png" alt="" />
+            <h2>UV Index</h2>
+          </div>
+          <div class="buttomContent">
+            <h2 id="uv">4</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="aiReport" id="aiReport" style="display: none;">
+      <h1>Weather Sumarize.....</h1>
+      <div class="contentAi">
+        <p id="summary">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi debitis vitae dicta, quae obcaecati quo magnam libero doloribus qui? In molestias delectus placeat totam quaerat temporibus accusamus vitae blanditiis mollitia?
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>

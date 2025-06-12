@@ -41,6 +41,8 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 .bar search i {
   font-size: 2rem;
@@ -49,11 +51,12 @@ body {
 }
 section.wd {
   width: 70%;
-  height: 70vh;
+  height: fit-content;
   background-color: #dcf9fe;
   border-radius: 10px;
   padding: 1.6rem;
   user-select: none;
+  padding-bottom: 2rem;
 }
 section.wd .top {
   width: 100%;
@@ -80,11 +83,11 @@ section.wd .top span {
 }
 section.wd .middle {
   display: grid;
-  height: 70%;
+  height: 40vh;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
 }
 .middle .div1 {
   grid-area: 1 / 1 / 2 / 4;
@@ -94,9 +97,8 @@ section.wd .middle {
   align-items:center;
   justify-content: flex-end;
   border-radius: 10px;
-  background: rgba(25, 192, 226, 0.117); /* semi-transparent */
-  backdrop-filter: blur(15px);         /* glass blur effect */
-  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
 }
 .middle .div1 img{
     width: 12rem;
@@ -111,7 +113,8 @@ section.wd .middle {
     position: absolute;
     top: 40%;
     left: 15%;
-    color: #2b3032;
+     color: rgb(255, 255, 255); /* or make it transparent if you only want the stroke */
+  -webkit-text-stroke: 2px rgb(60, 60, 60);
 }
 .middle .div1 h2{
     font-size: 2rem;
@@ -122,25 +125,196 @@ section.wd .middle {
 }
 .middle .div2 {
   grid-area: 1 / 4 / 2 / 6;
-  background-color: #63e59d;
+  background: rgba(25, 192, 226, 0.117); 
+  backdrop-filter: blur(15px);         
+  -webkit-backdrop-filter: blur(15px); 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.middle .div2 .innerdiv1{
+  background-color: #fff;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  align-items: center;
+}
+.middle .div2 .innerdiv1 h2{
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.middle .div2 .innerdiv1 h2 i{
+  color: #0c9a44;
+}
+.middle .div2 .innerdiv1 a{
+  font-size: 2.5rem;
+  color: #2b3032;
+  text-decoration: none;
+}
+.middle .div2 .innerdiv2{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+}
+.middle .div2 .innerdiv2 h2{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.middle .div2 .innerdiv2 h2 i{
+  color: blue;
+  font-size: 1.5rem;
+}
+.middle .div2 .innerdiv2 a{
+  font-size: 2.5rem;
+  color: #2b3032;
+  text-decoration: none;
+  display: flex;
+  align-items: end;
+}
+.middle .div2 .innerdiv2 a span{
+  font-size: 1.3rem;
+  margin-bottom: 10%;
+}
+.middle .div2 .innerdiv3,.middle .div2 .innerdiv4{
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  position: relative;
+  background-color: #ffffff;
+}
+.middle .div2 .innerdiv3 h2,.middle .div2 .innerdiv4 h2{
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.middle .div2 .innerdiv3 img,.middle .div2 .innerdiv4 img{
+  position: absolute;
+  bottom: 0;
+  width: 4rem;
+  object-fit: cover;
+  left: 10%;
+}
+.middle .div2 .innerdiv3 span,.middle .div2 .innerdiv4 span{
+  position: absolute;
+  bottom: 17%;
+  left: 40%;
 }
 .middle .div3 {
   grid-area: 2 / 1 / 3 / 2;
-  background-color: #63e5d4;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 10px;
+  /* display: flex; */
+  flex-direction: column;
+  overflow: hidden;
 }
+
 .middle .div4 {
   grid-area: 2 / 2 / 3 / 3;
-  background-color: #a663e5;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .middle .div5 {
   grid-area: 2 / 3 / 3 / 4;
-  background-color: #6386e5;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .middle .div6 {
   grid-area: 2 / 4 / 3 / 5;
-  background-color: #e5a463;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .middle .div7 {
   grid-area: 2 / 5 / 3 / 6;
-  background-color: #e3e563;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.div3 .topContent > img,
+.div4 .topContent > img,
+.div5 .topContent > img,
+.div6 .topContent > img,
+.div7 .topContent > img{
+  width: 2rem;
+  height: auto;
+}
+.div3 > .topContent,
+.div4 > .topContent,
+.div5 > .topContent,
+.div6 > .topContent,
+.div7 > .topContent{
+   height: 40%;
+  width: 100%;
+  padding: 0 10%;
+  background-color: #fcfcfc;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertical alignment */
+  justify-content: start; 
+  font-size: .7rem;
+  gap: 1rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.div3 .buttomContent,
+.div4 .buttomContent,
+.div5 .buttomContent,
+.div6 .buttomContent,
+.div7 .buttomContent{
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div3 .buttomContent h2,
+.div4 .buttomContent h2,
+.div5 .buttomContent h2,
+.div6 .buttomContent h2,
+.div7 .buttomContent h2{
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 2rem;
+  gap: .5rem;
+  font-weight: 500;
+}
+.div3 .buttomContent span,
+.div4 .buttomContent span,
+.div5 .buttomContent span,
+.div6 .buttomContent span,
+.div7 .buttomContent span{
+  height: 60%;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.aiReport{
+  margin-top: .5rem;
+  width: 70%;
+  background-color: #DCF9FE;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  gap: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+.aiReport h1{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.aiReport .contentAi{
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
